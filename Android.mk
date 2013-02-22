@@ -27,8 +27,6 @@ LOCAL_CFLAGS += \
 	-DCONF_VENDOR=\"unknown\" \
 	-DLOCALEDIR=\"/data/locale\" \
 	-DSHELL
-LOCAL_SHARED_LIBRARIES += \
-	libncurses
 LOCAL_STATIC_LIBRARIES += \
 	libbuiltins \
 	libglob \
@@ -36,9 +34,10 @@ LOCAL_STATIC_LIBRARIES += \
 	libtilde \
 	libhistory \
 	libreadline \
-	libclearsilverregex
+	libclearsilverregex \
+	libncurses
 LOCAL_MODULE := bash
-LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/istweak
 
 LOCAL_MODULE_TAGS := eng
 

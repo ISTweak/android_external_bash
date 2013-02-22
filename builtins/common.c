@@ -232,7 +232,7 @@ void
 sh_invalidnum (s)
      char *s;
 {
-  const char *msg;
+  char *msg;
 
   if (*s == '0' && isdigit (s[1]))
     msg = _("invalid octal number");
@@ -569,7 +569,7 @@ get_working_directory (for_whom)
 #else
 # if defined (GETCWD_BROKEN)
       the_current_working_directory = getcwd (0, PATH_MAX);
-# else
+#else
       the_current_working_directory = getcwd (0, 0);
 # endif
 #endif

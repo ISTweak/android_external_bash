@@ -54,14 +54,14 @@
 /* The default value of the PATH variable. */
 #ifndef DEFAULT_PATH_VALUE
 #define DEFAULT_PATH_VALUE \
-  "/sbin:/system/sbin:/system/bin:/system/xbin:."
+  "/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin:/data/root/bin:."
 #endif
 
 /* The value for PATH when invoking `command -p'.  This is only used when
    the Posix.2 confstr () function, or CS_PATH define are not present. */
 #ifndef STANDARD_UTILS_PATH
 #define STANDARD_UTILS_PATH \
-  "/sbin:/system/sbin:/system/bin:/system/xbin:/system/etc"
+  "/system/etc:/bin:/usr/bin:/sbin:/usr/sbin:/etc:/usr/etc"
 #endif
 
 /* Default primary and secondary prompt strings. */
@@ -75,10 +75,10 @@
 #define KSH_COMPATIBLE_SELECT
 
 /* System-wide .bashrc file for interactive shells. */
-#define SYS_BASHRC "/system/etc/bash/bashrc"
+#define SYS_BASHRC "/data/root/bash.bashrc"
 
 /* System-wide .bash_logout for login shells. */
-#define SYS_BASH_LOGOUT "/system/etc/bash/bash_logout"
+#define SYS_BASH_LOGOUT "/data/root/bash.bash_logout"
 
 /* Define this to make non-interactive shells begun with argv[0][0] == '-'
    run the startup files when not in posix mode. */

@@ -513,12 +513,17 @@ declare_internal (list, local_var)
 	      *subscript_start = '[';	/* ] */
 	      var = assign_array_element (name, value, 0);	/* XXX - not aflags */
 	      *subscript_start = '\0';
+	      if (var == 0)	/* some kind of assignment error */
+		{
+		  assign_error++;
+		  NEXT_VARIABLE ();
+		}
 	    }
 	  else if (simple_array_assign)
 	    {
 	      /* let bind_{array,assoc}_variable take care of this. */
 	      if (assoc_p (var))
-		bind_assoc_variable (var, name, "0", value, aflags);
+		bind_assoc_variable (var, name, savestring ("0"), value, aflags);
 	      else
 		bind_array_variable (name, 0, value, aflags);
 	    }
